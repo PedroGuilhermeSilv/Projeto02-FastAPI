@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "projeto2-fastapi"
+version = "0.1.0"
+description = ""
+authors = ["guilherme"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.108.0"
+uvicorn = "^0.25.0"
+sqlalchemy = "^2.0.23"
+psycopg2-binary = "^2.9.9"
+pytest = "^7.4.3"
+alembic = "^1.13.1"
+python-decouple = "^3.8"
+httpx = "^0.26.0"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+python-multipart = "^0.0.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

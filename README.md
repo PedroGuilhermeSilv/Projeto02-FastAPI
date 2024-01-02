@@ -10,3 +10,12 @@ O prejeto será referente a produtos e catergorias, onde poderemos adicionar , a
 ![](https://github.com/PedroGuilhermeSilv/Projeto02-FastAPI/blob/main/img/projeto2-rotas2.png)
 # TDD
 ![](https://github.com/PedroGuilhermeSilv/Projeto02-FastAPI/blob/main/img/tdd.png)
+
+## Bibliotecas utilizadas:
+- Fastapi
+- Uvicorn
+- sqlalchemy
+- psycopg2-binary
+- pytest
+- alembic
+- pyhon-decouple
