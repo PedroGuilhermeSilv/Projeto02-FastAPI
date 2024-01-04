@@ -8,14 +8,13 @@ class Category(CustombaseModel):
 
     @field_validator('slug')
     def validate_slug(cls,value):
-        if not re.match('^([a-z]|-|_)+$',value):
+        if not re.match('^([a-z]|[0-9]|-|_)+$',value):
             raise ValueError('Invalid slug')
         return value
 
-class CategoryOutput(CustombaseModel):
+class CategoryOutput(Category):
     id: int
-    name: str
-    slug: str
+
     class ConfigDict:
         from_attributes=True
 
