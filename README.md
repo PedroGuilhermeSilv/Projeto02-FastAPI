@@ -3,6 +3,9 @@ O prejeto será referente a produtos e catergorias, onde poderemos adicionar , a
 
 # Modelagem
 ![](https://github.com/PedroGuilhermeSilv/Projeto02-FastAPI/blob/main/img/proeto2-models.png)
+
+- Temoas duas classes: User e Product. Elas possuem uma relação entre si de 1 para N.
+
 # Rotas Category
 ![](https://github.com/PedroGuilhermeSilv/Projeto02-FastAPI/blob/main/img/projeto2-rotas.png)
 
