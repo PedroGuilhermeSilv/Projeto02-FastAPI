@@ -2,7 +2,7 @@ from app.schemas.base import CustombaseModel
 from pydantic import field_validator
 import re
 from datetime import datetime
-from app.schemas.category import Category
+from app.schemas.category import CategoryOutput
 
 class Product(CustombaseModel):
     name: str
@@ -23,7 +23,10 @@ class Product(CustombaseModel):
 
 class ProductOutput(Product):
     id: int
-    category: Category
+    category: CategoryOutput
+    class ConfigDict:
+        from_attributes=True
+
 
 class ProductInput(CustombaseModel):
     category_slug: str
