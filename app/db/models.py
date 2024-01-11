@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String , ForeignKey, DateTime, Float, func
+from sqlalchemy import Column, Integer, String , ForeignKey, DateTime, Float, func, Boolean
 from app.db.base import Base
 from sqlalchemy.orm import relationship
 
@@ -28,6 +28,9 @@ class User(Base):
     id = Column('id',Integer, primary_key=True,autoincrement=True) 
     username = Column('username',String,unique=True,nullable=False)
     password = Column('password',String,nullable=False) 
+    accountId = Column('account_id',Integer,nullable=True)
+    isBlocked = Column('is_blocked',Boolean,default=True)
+    created_at = Column('created_at',DateTime, default=func.now())
 
 
 

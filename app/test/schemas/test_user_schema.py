@@ -9,12 +9,16 @@ from fastapi.exceptions import HTTPException
 def test_user_schema():
     user = User(
         username='pedro',
-        password='pass'
+        password='pass',
+        isBlocked=True,
+        accountId=10
     )
 
     assert user.dict() == {
         'username': 'pedro',
-        'password':'pass'
+        'password':'pass',
+        'isBlocked':True,
+        'accountId':10
     }
 
 def test_user_schema_invalid_username():

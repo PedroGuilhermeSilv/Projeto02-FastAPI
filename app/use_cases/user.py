@@ -21,7 +21,10 @@ class UserUseCases:
     def register_user(self,user:User):
         user_on_db = UserModel(
             username=user.username,
-            password=crypt_context.hash(user.password)
+            password=crypt_context.hash(user.password),
+            isBlocked=user.isBlocked,
+            accountId=user.accountId,
+            
         )
 
         self.db_session.add(user_on_db)

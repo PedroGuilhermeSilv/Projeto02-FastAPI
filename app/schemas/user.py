@@ -7,6 +7,8 @@ from datetime import datetime
 class User(CustombaseModel):
     username: str
     password: str
+    isBlocked: bool
+    accountId: int
 
     @field_validator('username')
     def validate_username(cls,value):
