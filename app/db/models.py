@@ -37,11 +37,11 @@ class People(Base):
     __tablename__ = 'peoples'
     id = Column('id',Integer, primary_key=True,autoincrement=True) 
     name = Column('name',String,unique=True,nullable=False)
-    cpf = Column('cpf',String,nullable=False) 
+    cpf = Column('cpf',String,nullable=False,unique=True) 
     organization = Column('organization',Integer,nullable=True)
     role = Column('role',String,default=True)
     account_id = Column('account_id',Integer) 
-    email = Column('email',String)
+    email = Column('email',String,unique=True)
     ranking = Column('ranking',Integer )
     description = Column('description',String)
     birthday = Column('birthday', String)
