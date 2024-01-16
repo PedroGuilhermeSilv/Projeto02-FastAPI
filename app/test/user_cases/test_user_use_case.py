@@ -18,8 +18,8 @@ def test_registrer_user(db_session):
     user = User(
         username="Pedro",
         password="pass1",
-        isBlocked=True,
-        accountId=10,
+        is_blocked=True,
+        account_id=10,
     )
     uc = UserUseCases(db_session)
     uc.register_user(user=user)
@@ -28,7 +28,7 @@ def test_registrer_user(db_session):
 
     assert user_on_db is not None
     assert user_on_db.username == user.username
-    assert user_on_db.isBlocked == user.isBlocked
+    assert user_on_db.is_blocked == user.is_blocked
     assert crypt_context.verify(user.password, user_on_db.password)
 
     db_session.delete(user_on_db)
@@ -39,8 +39,8 @@ def test_registrer_user_username_already_exist(db_session):
     user_on_db = UserModel(
         username="Pedro",
         password=crypt_context.hash('pass1'),
-        isBlocked=True,
-        accountId=10
+        is_blocked=True,
+        account_id=10
     )
     db_session.add(user_on_db)
     db_session.commit()
@@ -49,8 +49,8 @@ def test_registrer_user_username_already_exist(db_session):
     user = User(
         username="Pedro",
         password=crypt_context.hash('pass1'),
-        isBlocked=True,
-        accountId=10
+        is_blocked=True,
+        account_id=10
     )
     with pytest.raises(HTTPException):
         uc.register_user(user=user)

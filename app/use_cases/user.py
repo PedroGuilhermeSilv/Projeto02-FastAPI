@@ -22,8 +22,8 @@ class UserUseCases:
         user_on_db = UserModel(
             username=user.username,
             password=crypt_context.hash(user.password),
-            isBlocked=user.isBlocked,
-            accountId=user.accountId,
+            is_blocked=user.is_blocked,
+            account_id=user.account_id,
             
         )
 
